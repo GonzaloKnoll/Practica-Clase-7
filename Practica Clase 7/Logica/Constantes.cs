@@ -8,9 +8,17 @@ namespace Logica
 {
     public enum MemoriaRAM
     {
-        DosGB,
-        CuatroGB,
-        OchoGB,
-        DieciseisGB
+        Dos,
+        Cuatro,
+        Ocho,
+        Dieciseis
+    }
+
+    public static class Extensiones
+    {
+        public static bool ValidarMemoria(this string valor)
+        {
+            return Enum.IsDefined(typeof(MemoriaRAM), valor);
+        }
     }
 }

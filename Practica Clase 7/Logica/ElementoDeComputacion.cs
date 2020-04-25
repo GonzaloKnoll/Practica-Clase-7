@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class ElementoDeComputacion
+    public abstract class ElementoDeComputacion
     {
         public string Modelo { get; set; }
         public string Marca { get; set; }
         public int NumeroDeSerie { get; set; }
         public string Identificador { get { return $"{this.Modelo}-{this.Marca}-{(this.NumeroDeSerie).ToString()}";} }
+
+        public abstract string ObtenerDescripcion();
     }
 }

@@ -20,5 +20,10 @@ namespace Logica
             this.AnoDeFabricacion = anodefabricacion;
             this.Pulgadas = pulgadas;
         }
+
+        public override string ObtenerDescripcion()
+        {
+            return (Pulgadas != null) ? $"MONITOR {this.Marca} - {this.Modelo} {this.Pulgadas}" : $"MONITOR {this.Marca} - {this.Modelo}";
+        }
     }
 }

@@ -21,5 +21,10 @@ namespace Logica
             this.MemoriaRAM = memoriaram;
             this.Fabricante = fabricante;
         }
+
+        public override string ObtenerDescripcion()
+        {
+            return $"PC {this.Modelo} - {this.Marca} - {this.DescripcionProcesador} {this.MemoriaRAM} RAM - {this.Fabricante}";
+        }
     }
 }

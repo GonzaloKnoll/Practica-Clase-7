@@ -45,6 +45,7 @@
     <Compile Include="Constantes.cs" />
     <Compile Include="DepositoDeComputacion.cs" />
     <Compile Include="ElementoDeComputacion.cs" />
+    <Compile Include="InfoProductoArgs.cs" />
     <Compile Include="Monitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
