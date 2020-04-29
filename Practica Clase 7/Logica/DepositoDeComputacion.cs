@@ -19,9 +19,11 @@ namespace Logica
             Computadoras = new List<Computadora>();
         }
 
-        public static DepositoDeComputacion Instance { get
+        public static DepositoDeComputacion Instance
+        {
+            get
             {
-                if (instance==null)
+                if (instance == null)
                 {
                     instance = new DepositoDeComputacion();
                 }
@@ -42,7 +44,7 @@ namespace Logica
             });
         }
 
-        public void AgregarProducto (string modelo, string marca, int numerodeserie, string descripcionprocesador, MemoriaRAM memoriaram, string fabricante)
+        public void AgregarProducto(string modelo, string marca, int numerodeserie, string descripcionprocesador, MemoriaRAM memoriaram, string fabricante)
         {
             Computadora nuevaComputadora = new Computadora();
             nuevaComputadora.CargarDatos(modelo, marca, numerodeserie, descripcionprocesador, memoriaram, fabricante);
@@ -55,12 +57,12 @@ namespace Logica
             });
         }
 
-        public bool EliminarProducto (string identificador)
+        public bool EliminarProducto(string identificador)
         {
             List<ElementoDeComputacion> productos = ObtenerListaUnicaProductos();
             ElementoDeComputacion productoaeliminar = productos.Find(x => x.Identificador == identificador);
             string tipoproducto;
-            if (productoaeliminar!=null)
+            if (productoaeliminar != null)
             {
                 if (productoaeliminar is Monitor)
                 {
@@ -88,11 +90,16 @@ namespace Logica
             List<ElementoDeComputacion> productos = new List<ElementoDeComputacion>();
             productos.AddRange(Monitores);
             productos.AddRange(Computadoras);
+
+            //Falta ordenar 
+
             return productos;
         }
 
-        public string ObtenerDescripcionProducto (ElementoDeComputacion producto)
+        public string ObtenerDescripcionProducto(ElementoDeComputacion producto)
         {
+            //return producto.ObtenerDescripcion(); //Es suficiente.
+
             if (producto is Monitor)
             {
                 return (producto as Monitor).ObtenerDescripcion();
